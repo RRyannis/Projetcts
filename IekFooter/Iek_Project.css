@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    
+    background-color: #B39C9A;
+    font-weight: bold;
+    text-align: center;
+    color: #A1A8B3;
+   }
+
+p {
+    font-family: Tahoma, Verdana, sans-serif;
+    }
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+    "logo logo"
+    "title title"
+    "header header"
+    "description description"
+    "subjects subjects"
+    "gallery gallery"
+    "counter counter"
+    "footer footer"
+    ;
+    
+}
+.logo {
+    grid-area: logo;
+    
+}
+.ilogo{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.title {
+    grid-area: title;
+    padding: 70px;    
+}
+.spacer{
+    grid-area: spacer;
+}
+.nav1{
+    grid-area: nav1;
+    background-color: #A1A8B3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.nav2{
+    grid-area: nav2;
+    background-color: #A1A8B3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+.navv{
+    color: #FEF6F5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    
+}
+.description {
+    grid-area: description;
+}
+.subjects {
+    grid-area: subjects;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 75%;
+}
+.info {
+    grid-area: info;
+}
+
+.gallery {
+    grid-area: gallery;
+           
+}
+#slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  #slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #slideshow img.active {
+    opacity: 1;
+  }
+
+
+
+
+.fcounter {
+    grid-area: fcounter;
+    /*justify-self: center;
+    align-self: center;
+    display: grid;*/
+    
+}
+.footer {
+    grid-area: footer;
+    
+}
+.grid div:nth-child(even){
+    background-color: #DBEAFF;
+}
+.grid div:nth-child(odd){
+    background-color: #DBEAFF;
+}
+.grid div:nth-child(4) {
+    background-color: #A1A8B3;
+}
+.grid div:nth-child(5) {
+    background-color: #A1A8B3;
+}
+@media screen and (min-width: 720px)
+ {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 500px  500px 1fr;
+        grid-template-rows: auto auto 50px auto auto auto  1fr auto ;
+        grid-template-areas:
+        ". logo title ."
+        ". spacer spacer ."
+        ". nav1  nav2 ."
+        ". header header ."
+        ". description description ."
+        ". subjects subjects ."
+        ". info info ."
+        ". gallery fcounter ."  /* counter should become clock-item for the js clock*/
+        ". footer footer ."
+        ;
+
+        /*grid-gap: 10px;*/
+    }
+
+}
